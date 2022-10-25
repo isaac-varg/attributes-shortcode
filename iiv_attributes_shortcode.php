@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name:       IsaacisVargas Attributes Shortcode
- * Plugin URI:        https://github.com/isaac-varg/iiv-attributes-shortcode
+ * Plugin URI:        https://github.com/isaac-varg/attributes-shortcode
  * Description:       Displays a horizontal list of product attributes.
  * Version:           1.0
  * Requires at least: 5.2
