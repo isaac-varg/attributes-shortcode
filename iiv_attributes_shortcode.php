@@ -58,6 +58,9 @@ function iiv_attributes_shortcode( $atts ) {
 		'iiv_attributes'
 	);
 
+	// get the id of the post/product
+	$post_id = get_the_ID();
+
 	// Start output
 
 	$output = '';
@@ -76,20 +79,16 @@ function iiv_attributes_shortcode( $atts ) {
 
 			if ( $atts['attribute'] == $taxonomy->attribute_name ) {
 
+			
+
 				// Set taxonomy id correctly so it can be used for get_terms() lookup
 
 				$taxonomy_id = 'pa_' . $taxonomy->attribute_name;
 
 				// Get terms
 
-				$terms = get_terms(
-					array(
-						'taxonomy'		=> $taxonomy_id,
-						'orderby'		=> $atts['orderby'],
-						'order'			=> $atts['order'],
-						'hide_empty'	=> $atts['hide_empty'],
-					)
-				);
+				$terms = get_the_terms($post_id, $taxonomy_id);
+
 
 				// If terms exist
 
